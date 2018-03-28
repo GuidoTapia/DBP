@@ -3,15 +3,73 @@
 <head>
 <title>Page Title</title>
 </head>
+<!--Jquery-->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("#content").click(function(){
+				$("#div1").fadeToggle("fast");
+				$("#div2").fadeToggle("slow");
+				$("#div3").fadeToggle(3000);
+				
+			});
+			 
+			$("#text").click(function(){
+				$("p").toggle();
+			});
+			$("#foto").click(function(){
+				$("#info").slideToggle("slow");
+			});
+			$("#agrandar").click(function(){
+				$("#horario").animate({					
+					height: '+=150px',
+					width: '+=150px'
+				});
+			});
+
+			$("#reducir").click(function(){
+				$("#horario").animate({					
+					height: '-=150px',
+					width: '-=150px'
+				});
+			});
+			
+			$("#foto").mouseenter(function(){
+				$("#foto").animate({					
+					height: '+=300px',
+					width: '+=300px',
+					align: 'center'
+				});
+			});
+			
+			$("#foto").mouseleave(function(){
+				$("#foto").animate({					
+					height: '-=300px',
+					width: '-=300px',
+					align: 'center'
+				});
+			});
+			
+			
+			
+		});
+		</script>
 <body style="background-color:FEFEF0;">
 <img src="http://ucsp.edu.pe/wp-content/uploads/2018/02/logo_sanpablo_opt.png" alt="W3Schools.com">
 <h1>Página del estudiante</h1>
+<button type="button" id="content">Mostrar/Ocultar contenido</button>
+<div id="div1" style="display:none;">
 <pre>
 Alumno: Guido Tapia
 Carrera: Ciencia de la Computación
 Semestre: Tercero
 </pre>
-<h1>Cursos</h1>
+<img src="http://i1.mendozapost.com/files/image/7/7142/54b6f4c45797b_1420_!.jpg?s=270345070aa93e05e936c1b6f31c0904&d=1421508947" alt="Aquí va tu foto de perfil"
+			title="Foto de perfil" id="foto" style="width:150px; height:150px;"> 
+			<p>Haz click en tu foto de perfil para mostrar/ocultar tu información</p>
+</div>
+<div id="div2" style="display:none;">
+		<h1>Cursos</h1>
 <ul>
   <li>Antropología Filosófica y Teológica</li>
   <li>Algebra Abstracta</li>
@@ -21,6 +79,12 @@ Semestre: Tercero
   <li>Cálculo I	</li>
   <li>Desarrollo Basado en Plataformas	</li>
 </ul>
+<button type="button" id="horarios">Mostrar/Ocultar contenido</button>
+<div id="div4" style="display:none;">
+
+</div>
+</div>
+<div id="div3" style="display:none;">
 <table style="width:50%">
   <tr>
     <th>Alumno</th>
@@ -146,5 +210,6 @@ Semestre: Tercero
 <form action="http://ucsp.edu.pe/">
     <input type="submit" value="Visitar pagina de la universidad" >
 </form>
+</div>
 </body>
 </html>
